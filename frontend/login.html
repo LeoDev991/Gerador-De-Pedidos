@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Pedidos de Insumos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main style="max-width:420px;margin:60px auto;">
+    <section class="card">
+      <h2>Entrar</h2>
+      <label>Usuário
+        <input id="loginUsername" type="text" autocomplete="username">
+      </label>
+      <label>Senha
+        <input id="loginPassword" type="password" autocomplete="current-password">
+      </label>
+      <div class="actions">
+        <button id="btnLogin" class="primary">Entrar</button>
+        <button id="showRegister">Criar conta</button>
+      </div>
+      <div id="loginFeedback" class="feedback"></div>
+    </section>
+
+    <section id="registerCard" class="card hidden" style="margin-top:12px;">
+      <h2>Registrar</h2>
+      <label>Usuário
+        <input id="regUsername" type="text" autocomplete="username">
+      </label>
+      <label>Senha
+        <input id="regPassword" type="password" autocomplete="new-password">
+      </label>
+      <div class="actions">
+        <button id="btnRegister" class="primary">Criar conta</button>
+        <button id="cancelRegister">Cancelar</button>
+      </div>
+      <div id="regFeedback" class="feedback"></div>
+    </section>
+  </main>
+
+  <script src="/login.js"></script>
+</body>
+</html>

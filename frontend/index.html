@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedidos de Insumos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Pedidos de Insumos</h1>
+      <p>Sistema simples para lojas e quiosques de aeroporto</p>
+    </div>
+    <div style="display:flex;gap:12px;align-items:center;">
+      <div id="userArea" style="color:white;display:flex;gap:8px;align-items:center;">
+        <span id="loggedUser"></span>
+        <button id="logoutBtn" class="ghost" style="background:transparent;">Sair</button>
+      </div>
+      <button id="duplicateLatest" class="ghost">Gerar pedido da semana automaticamente</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <div class="section-title">
+        <h2>Novo pedido</h2>
+        <div class="pill">Gerar PDF ao finalizar</div>
+      </div>
+
+      <div class="grid two">
+        <label>Loja
+          <select id="storeSelect"></select>
+        </label>
+        <label>Categoria
+          <select id="areaSelect"></select>
+        </label>
+      </div>
+
+      <div id="itemsContainer"></div>
+      <div class="actions">
+        <button id="addItem">Adicionar item</button>
+        <button id="addNewProduct">Adicionar novo item ao catálogo</button>
+      </div>
+
+      <div id="newProductForm" class="card soft hidden">
+        <div class="section-title">
+          <strong>Novo produto</strong>
+          <button class="ghost small" id="closeNewProduct">Fechar</button>
+        </div>
+        <div class="grid three">
+          <label>Nome
+            <input id="npName" type="text" placeholder="Ex: Café em grão">
+          </label>
+          <label>Categoria
+            <input id="npCategory" type="text" placeholder="Insumos, Limpeza...">
+          </label>
+          <label>Unidade
+            <input id="npUnit" type="text" placeholder="kg, caixa, pacote">
+          </label>
+        </div>
+        <button id="saveNewProduct">Salvar produto</button>
+      </div>
+
+      <label>Líder responsável
+        <input id="leaderInput" type="text" placeholder="Digite o nome" required>
+      </label>
+
+      <div class="actions end">
+        <button id="submitOrder" class="primary">Finalizar pedido</button>
+      </div>
+      <div id="feedback" class="feedback"></div>
+    </section>
+
+    <section class="card">
+      <div class="section-title">
+        <h2>Produtos cadastrados</h2>
+      </div>
+      <div id="productsList" class="list"></div>
+    </section>
+
+    <section class="card">
+      <div class="section-title">
+        <h2>Pedidos anteriores</h2>
+      </div>
+      <div id="ordersList" class="list"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

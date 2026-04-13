@@ -1,0 +1,5 @@
+
+> gerador-de-pedidos@1.0.0 start
+> node server.js
+
+Servidor rodando em http://localhost:3000
